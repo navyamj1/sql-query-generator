@@ -1,8 +1,8 @@
-import os
+
 import streamlit as st 
 import google.generativeai as genai
 st.set_page_config(page_title="SQL QUERY GENERATOR",page_icon=":robot:")
-google_api_key=os.getenv("GEMINI_API_KEY")
+google_api_key=st.secrets("GEMINI_API_KEY")
 genai.configure(api_key=google_api_key)
 model=genai.GenerativeModel(model_name="gemini-1.5-flash-latest")
 
